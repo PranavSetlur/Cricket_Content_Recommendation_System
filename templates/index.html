@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Article Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .suggestions {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            max-height: 100px;
+            overflow-y: auto;
+            position: absolute;
+            z-index: 1000;
+            background-color: white;
+        }
+        .suggestions li {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestions li:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Article Recommendations</h1>
+        <form method="post">
+            <label for="title">Article Title:</label>
+            <div style="position: relative;">
+                <input type="text" id="title" name="title" required value="{{ title }}" oninput="fetchSuggestions()" autocomplete="off">
+                <ul id="suggestions" class="suggestions"></ul>
+            </div>
+            <label for="top_n">Number of Recommendations:</label>
+            <input type="number" id="top_n" name="top_n" value="{{ top_n }}" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if original_article is not none %}
+        <h2>Original Article</h2>
+        <div class="original-article">
+            <h3><a href="{{ original_article['link'] }}" target="_blank">{{ original_article['title'] }}</a></h3>
+            <p><strong>Published Date:</strong> {{ original_article['date'] }}</p>
+            <p>{{ original_article['summary'] }}</p>
+        </div>
+        {% endif %}
+
+        {% if recommendations %}
+        <h2>Recommendations for "{{ title }}"</h2>
+        <ul>
+            {% for rec in recommendations %}
+            <li>
+                <a href="{{ rec['link'] }}" target="_blank">{{ rec['title'] }}</a><br>
+                <strong>Summary:</strong> {{ rec['summary'] }}<br>
+                <strong>Published Date:</strong> {{ rec['date'] }}<br>
+            </li>
+            {% endfor %}
+        </ul>
+        {% elif title %}
+        <p>No recommendations found for "{{ title }}". Please try another title.</p>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

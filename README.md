@@ -1,6 +1,6 @@
 # Cricket Article Recommendations System
 
-This system provides recommendations for cricket-related articles based on user input and allows searching through a database of articles.
+This system provides recommendations for cricket-related articles based on user input and allows searching through a comprehensive database of articles.
 
 ## Setup Instructions
 
@@ -16,8 +16,8 @@ This system provides recommendations for cricket-related articles based on user 
 1. **Clone the repository:**
 
    ```
-   git clone https://github.com/yourusername/your-repository.git
-   cd your-repository
+   git clone https://github.com/PranavSetlur/Cricket_Content_Recommendation_System.git
+   cd Cricket_Content_Recoomendation_System
    ```
 2. **Install Python dependencies:**
 
@@ -30,15 +30,21 @@ pip install -r requirements.txt
    ```
 This command starts the Flask development server. By default, the application runs on http://localhost:5000.
 
-### Usage
+## Usage
 Access the Application:
 
 Open a web browser and go to http://localhost:5000 to access the application.
 
-Recommendations:
+### Recommendations:
 
-Enter an article title in the input field and specify the number of recommendations to retrieve.
-Click on the "Get Recommendations" button to see the recommended articles.
-Article Database:
+1. Enter an article title in the input field on the "Recommendations" tab.
+2. Specify the number of recommendations you wish to retrieve.
+3. Click on the "Get Recommendations" button to see a list of recommended articles.
 
-Navigate to the "Article Database" tab to search through all articles.
+### Article Database
+1. Navigate to the "Article Database" tab.
+2. Use the search fields to filter articles by title and summary
+3. The articles matching your search criteria will be displayed in a table format with columns for the title, summary, and published daye
+4. Use the paginated controls at the bottom to navigate through the pages of articles.
+
+You can also use the article database tab to find the title of a specific article you want recommended for you.

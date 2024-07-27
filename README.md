@@ -1,6 +1,6 @@
 # Cricket Article Recommendations System
 
-This system provides recommendations for cricket-related articles based on user input and allows searching through a comprehensive database of articles. You can find the app here - https://psetlur6.pythonanywhere.com/
+This system provides recommendations for cricket-related articles based on user input and allows searching through a comprehensive database of articles. You can find the app here - https://psetlur6.pythonanywhere.com/. Read more about the app here - https://between22yards.wordpress.com/2024/07/27/cricket-content-curator/.
 
 ## Setup Instructions
 
